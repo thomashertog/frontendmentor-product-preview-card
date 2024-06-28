@@ -12,6 +12,7 @@
 
 :root {
     --dark-cyan: hsl(158, 36%, 37%);
+    --darker-cyan: hsl(158, 36%, 20%);
     --cream: hsl(30, 38%, 92%);
 
     --very-dark-blue: hsl(212, 21%, 14%);
@@ -132,6 +133,10 @@ button{
     align-items: center;
     gap: .75em;
     justify-content: center;
+
+    &:hover{
+        background-color: var(--darker-cyan);
+    }
 }
 
 h2{
