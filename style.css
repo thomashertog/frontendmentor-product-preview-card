@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+    font-weight: 500, 700;
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf') format('truetype');
+    font-weight: 700;
+}
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    background-color: var(--cream);
+    display: grid;
+    place-items: center;
+    color: var(--dark-grayish-blue);
+}
+
+p{
+    margin-block-start: 0;
+}
+
+img {
+    max-inline-size: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.product {
+    --content-padding: 1em;
+    background-color: var(--white);
+    border-radius: 1em;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: var(--content-padding) 1fr var(--content-padding);
+    grid-template-areas: "image image image" ". title ." ". description ." ". price ." ". button .";
+    row-gap: 1em;
+    align-items: center;
+    max-inline-size: min(40rem, 90vw);
+    padding-block-end: var(--content-padding);
+
+    picture {
+        grid-area: image;
+    }
+
+    header {
+        grid-area: title;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    .price {
+        grid-area: price
+    }
+
+    button {
+        grid-area: button;
+    }
+
+    @media screen and (min-width: 35rem) {
+        grid-template-columns: 1fr var(--content-padding) 1fr var(--content-padding);
+        grid-template-rows: var(--content-padding) repeat(4, auto) var(--content-padding);
+        grid-template-areas: "image . . ." "image . title ." "image . description ." "image . price ." "image . button ." "image . . .";
+        padding-block-end: 0;
+        row-gap: initial;
+    }
+}
+
+.type {
+    text-transform: uppercase;
+}
+
+h2 {
+    color: var(--very-dark-blue);
+}
+
+.original {
+    text-decoration: line-through;
+}
+
+.price {
+    color: var(--dark-cyan);
+    font-size: 2rem;
+    text-decoration: initial;
+    font-family: 'Fraunces';
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block-start: 0;
+
+    .original{
+        color: var(--dark-grayish-blue);
+        font-size: 1rem;
+        font-family: 'Montserrat';
+    }
+}
+
+button{
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    border: 1px solid currentColor;
+    padding-block: .5em;
+    border-radius: .5em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: .75em;
+    justify-content: center;
+}
