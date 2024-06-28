@@ -26,6 +26,7 @@ body {
     display: grid;
     place-items: center;
     color: var(--dark-grayish-blue);
+    grid-template-rows: 1fr min-content;
 }
 
 p{
@@ -131,4 +132,12 @@ button{
     align-items: center;
     gap: .75em;
     justify-content: center;
+}
+
+h2{
+    font-family: "Fraunces";
+
+    @media screen and (min-width: 35rem) {
+        font-size: 2rem;
+    }
 }
